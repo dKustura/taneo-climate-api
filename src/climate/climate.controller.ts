@@ -1,6 +1,7 @@
 import { Controller, Get, Param } from '@nestjs/common';
 import { ApiParam, ApiTags } from '@nestjs/swagger';
 import { ClimateService } from './climate.service';
+import { Variable } from './enums/variable.enum';
 import { GetAverageDataParams } from './params/get-average-data.params';
 
 @ApiTags('Climate')
@@ -23,6 +24,7 @@ export class ClimateController {
   @ApiParam({
     name: 'variable',
     type: 'string',
+    enum: Variable,
   })
   @Get('mavg/:variable/:startYear/:endYear/:countryCode')
   getMonthlyAverageData(@Param() params: GetAverageDataParams) {
@@ -49,6 +51,7 @@ export class ClimateController {
   @ApiParam({
     name: 'variable',
     type: 'string',
+    enum: Variable,
   })
   @Get('annualavg/:variable/:startYear/:endYear/:countryCode')
   getAnnualAverageData(@Param() params: GetAverageDataParams) {

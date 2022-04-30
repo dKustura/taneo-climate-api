@@ -1,3 +1,6 @@
+export const BASE_SERVICE_URL =
+  'https://climateknowledgeportal.worldbank.org/climate_tab/cmip5/climatology';
+
 export const GLOBAL_CIRCULATION_MODELS = [
   'access1-0',
   'bnu-esm',

@@ -1,14 +1,15 @@
+import { Variable } from 'climate/enums/variable.enum';
 import { GCMData } from 'climate/types/GCMData';
 
 export abstract class GetAverageAbstractDto {
   readonly gcm: string;
-  readonly variable: string;
+  readonly variable: Variable;
   readonly fromYear: number;
   readonly toYear: number;
 
   constructor(
     gcmData: GCMData,
-    variable: string,
+    variable: Variable,
     startYear: number,
     endYear: number,
   ) {

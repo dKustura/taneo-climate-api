@@ -12,6 +12,7 @@ import {
 } from './climate.constants';
 import { getRequestUrl } from './climate.utils';
 import { GCMData } from './types/GCMData';
+import { Variable } from './enums/variable.enum';
 
 // DTOs
 import { GetMonthlyAverageDto } from './dto/get-monthly-averages.dto';
@@ -22,7 +23,7 @@ export class ClimateService {
   constructor(private httpService: HttpService) {}
 
   public async getMonthlyAverageData(
-    variable: string,
+    variable: Variable,
     startYear: number,
     endYear: number,
     countryCode: string,
@@ -38,7 +39,7 @@ export class ClimateService {
   }
 
   public async getAnnualAverageData(
-    variable: string,
+    variable: Variable,
     startYear: number,
     endYear: number,
     countryCode: string,
@@ -54,7 +55,7 @@ export class ClimateService {
   }
 
   private async fetchDataAndMapResult(
-    variable: string,
+    variable: Variable,
     startYear: number,
     endYear: number,
     countryCode: string,
@@ -71,7 +72,7 @@ export class ClimateService {
   }
 
   private async getDataForAllGCMs(
-    variable: string,
+    variable: Variable,
     startYear: number,
     endYear: number,
     countryCode: string,

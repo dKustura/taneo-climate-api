@@ -1,10 +1,21 @@
 import { Type } from 'class-transformer';
-import { IsInt, IsNotEmpty, IsPositive, IsString } from 'class-validator';
+import {
+  IsEnum,
+  IsInt,
+  IsNotEmpty,
+  IsPositive,
+  IsString,
+} from 'class-validator';
+import { Variable } from 'climate/enums/variable.enum';
 
 export class GetAverageDataParams {
   @IsString()
   @IsNotEmpty()
-  variable: string;
+  @IsEnum(Variable, {
+    each: true,
+    message: 'Variable must be one of: [tas, pr]',
+  })
+  variable: Variable;
 
   @IsPositive()
   @IsInt()

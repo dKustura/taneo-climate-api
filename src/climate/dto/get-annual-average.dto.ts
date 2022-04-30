@@ -1,3 +1,4 @@
+import { Variable } from 'climate/enums/variable.enum';
 import { GCMData } from 'climate/types/GCMData';
 import { GetAverageAbstractDto } from './get-average-abstract.dto';
 
@@ -6,7 +7,7 @@ export class GetAnnualAverageDto extends GetAverageAbstractDto {
 
   constructor(
     gcmData: GCMData,
-    variable: string,
+    variable: Variable,
     startYear: number,
     endYear: number,
   ) {
