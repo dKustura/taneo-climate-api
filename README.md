@@ -5,26 +5,32 @@
 [circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
 [circleci-url]: https://circleci.com/gh/nestjs/nest
 
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow"></a>
-</p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
+  <p align="center">Built with <a href="https://nestjs.com/" target="_blank">NestJS</a> a progressive Node.js framework for building efficient and scalable server-side applications.</p>
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+After some extensive digging around the available and the removed APIs of the World Bank I've managed to detect the API used for fetching CSV data from the Climatology tab on the [Download data](https://climateknowledgeportal.worldbank.org/download-data) page of the World Banks Gorup's Climate Change Knowledge Portal.
+This service is built to partially translate that existing API to the discontinued Climate API of World Bank.
+
+It is modeled after the specification for the old API which was located [here](https://datahelpdesk.worldbank.org/knowledgebase/articles/902061-climate-data-api) but can still be found on the Wayback machine [here](http://web.archive.org/web/20161126073309/https://datahelpdesk.worldbank.org/knowledgebase/articles/902061-climate-data-api).
+
+Since not all models of the data returned from the old API are described in the specification, I had to look into some old packages used for fetching data from the API. Specifically the following two:
+
+- [wbpy](https://github.com/mattduck/wbpy)
+- [rWBclimate](https://github.com/ropensci/rWBclimate)
+
+The old API returned data for 15 different GCMs (global circulation models) and the time periods could range from year 1920 to year 2099. This service provides data from 10 GCMs and the valid time periods are following:
+
+- 2020 - 2039
+- 2040 - 2059
+- 2060 - 2079
+- 2080 - 2099
+
+The reason behind this decision is that I haven't managed to map data from the existing API to time periods in the past and that there are many more climate projection models to pick from (some of which don't return any data). Therefore, this service provides only the previously mentioned intervals and 10 different hand-picked projection models from the CMIP5 collection of models (first dropdown on the Download data page).
+
+## Access
+
+You can access the API and its specification on https://taneo-climate-api.herokuapp.com/.
 
 ## Installation
 
@@ -45,29 +51,4 @@ $ npm run start:dev
 $ npm run start:prod
 ```
 
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-Nest is [MIT licensed](LICENSE).
+Navigate to `localhost:3000` to view the Swagger page of the service.
