@@ -10,7 +10,7 @@ const config: Config = {
   swagger: {
     enabled: true,
     title: 'Taneo Climate API',
-    description: 'Substitute for the discontinued ClimateAPI from WorldBank',
+    description: 'Substitute for the discontinued ClimateAPI from WorldBank.',
     version: '1.0',
     path: '/',
   },
