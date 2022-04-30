@@ -11,6 +11,9 @@ export class GetAnnualAverageDto extends GetAverageAbstractDto {
     endYear: number,
   ) {
     super(gcmData, variable, startYear, endYear);
-    this.annualData = [gcmData.annualValue];
+    this.annualData =
+      gcmData.annualValue && gcmData.annualValue !== 0
+        ? [gcmData.annualValue]
+        : [];
   }
 }
