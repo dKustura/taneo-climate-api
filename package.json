@@ -1,5 +1,5 @@
 {
-  "name": "taneo-weather-api",
+  "name": "taneo-climate-api",
   "version": "0.0.1",
   "description": "",
   "author": "",
@@ -21,11 +21,14 @@
     "test:e2e": "jest --config ./test/jest-e2e.json"
   },
   "dependencies": {
+    "@nestjs/axios": "^0.0.7",
     "@nestjs/common": "^8.0.0",
     "@nestjs/config": "^2.0.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
     "@nestjs/swagger": "^5.2.1",
+    "axios": "^0.27.2",
+    "csv-parse": "^5.0.4",
     "helmet": "^5.0.2",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",

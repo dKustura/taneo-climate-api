@@ -9,10 +9,10 @@ const config: Config = {
   },
   swagger: {
     enabled: true,
-    title: 'Taneo Weather API',
-    description: 'Taneo app weather API.',
+    title: 'Taneo Climate API',
+    description: 'Substitute for the discontinued ClimateAPI from WorldBank',
     version: '1.0',
-    path: 'v1',
+    path: '/',
   },
 };
 
