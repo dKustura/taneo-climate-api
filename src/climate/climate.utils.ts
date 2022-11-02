@@ -8,5 +8,5 @@ export const getRequestUrl = (
   endYear: number,
   countryCode: string,
 ) => {
-  return `${BASE_SERVICE_URL}/${variable}/median/annual/${gcm}/climatology/rcp85/${startYear}-${endYear}/country/${countryCode}`;
+  return `${BASE_SERVICE_URL}/${variable}/median/annual/${gcm}/climatology/rcp85/${startYear}-${endYear}/country/${countryCode}/0`;
 };
