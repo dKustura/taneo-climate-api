@@ -2,7 +2,7 @@
 
 ## About the `Taneo` Climate Data API
 
-Taneo Climate data API is an API which translates an existing API of the World Bank’s Climate Change Knowledge Portal into a deprecated Climate Data API specification. This document is a modified version of the specification of the deprecated API, which you can find [here](http://web.archive.org/web/20161126073309/https://datahelpdesk.worldbank.org/knowledgebase/articles/902061-climate-data-api).
+Taneo Climate data API translates an existing API of the World Bank’s Climate Change Knowledge Portal into a deprecated Climate Data API specification. This document is a modified version of the specification of the deprecated API, which you can find [here](http://web.archive.org/web/20161126073309/https://datahelpdesk.worldbank.org/knowledgebase/articles/902061-climate-data-api).
 
 ## About the Data
 
