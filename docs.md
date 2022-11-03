@@ -14,7 +14,7 @@ Note these data are modeled estimates of temperature and precipitation changes i
 
 The Climate Data API uses REST-based requests, in which the general form looks like this:
 
-ht<span>tp://</span>taneo-climate-api.herokuapp.com/v1/country/`type`/`var`/`start`/`end`/`ISO3`
+ht<span>tps://</span>taneo-climate-api.herokuapp.com/v1/country/`type`/`var`/`start`/`end`/`ISO3`
 
 All tagged parameters in this URL are required and explained below.
 
