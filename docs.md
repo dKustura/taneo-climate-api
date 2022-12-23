@@ -14,7 +14,7 @@ Note these data are modeled estimates of temperature and precipitation changes i
 
 The Climate Data API uses REST-based requests, in which the general form looks like this:
 
-ht<span>tps://</span>taneo-climate-api.herokuapp.com/v1/country/`type`/`var`/`start`/`end`/`ISO3`
+ht<span>tp://</span>taneo.poscic.net/v1/country/`type`/`var`/`start`/`end`/`ISO3`
 
 All tagged parameters in this URL are required and explained below.
 
@@ -251,7 +251,7 @@ GCM in each of the objects in the response is one of:
 
 # Try it out
 
-You can open the Swagger UI of the API on https://taneo-climate-api.herokuapp.com/ and try it yourself!
+You can open the Swagger UI of the API on http://taneo.poscic.net/ and try it yourself!
 
 Be careful to enter correct start and end year pairs, e.g. 2020 and 2039.
 One set of valid parameters is:

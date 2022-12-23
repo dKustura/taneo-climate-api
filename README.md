@@ -30,7 +30,7 @@ The reason behind this decision is that I haven't managed to map data from the e
 
 ## Access
 
-You can access the API and its specification on https://taneo-climate-api.herokuapp.com/.
+You can access the API and its specification on http://taneo.poscic.net/.
 
 ## Installation
 
